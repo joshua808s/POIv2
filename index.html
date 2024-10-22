@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Bienvenido!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+            <form class="sign-in"  method="POST" action="php\login.php" >
+                <h2>Iniciar Sesión</h2>
+                <div class="social-networks">
+                </div>
+                <span>Ingrese su Telfono y Contraseña para continuar</span>
+                <div class="container-input">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <input type="tel" name="celular" placeholder="Celular">
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="contrasena" placeholder="Contraseña">
+                </div>
+                <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
+                <input class="button" type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+
+        <div class="container-form">
+            <form class="sign-up" method="POST" action="php\registrar.php" enctype="multipart/form-data">
+                <h2>Registrarse</h2>
+                <div class="social-networks">
+                </div>
+                <span>Capture todos los datos para continuar</span>
+                <div class="container-input">
+                    <ion-icon name="image-outline"></ion-icon>
+                    <label for="file-upload" class="custom-file-upload">
+                        Elegir imagen
+                    </label>
+                    <input id="file-upload" name="imagen" type="file" accept="image/*" required>
+                </div>                
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="container-input">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <input type="tel" name="celular" placeholder="Celular" required>
+                </div>
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="contrasena" placeholder="Contraseña" required>
+                </div>
+                <input class="button" type="submit" value="Registrarse">
+            </form>
+        </div>
+
+        <div class="container-welcome">
+            <div class="welcome-sign-up welcome">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingrese sus datos personales para usar todas las funciones del sitio</p>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h3>¡Hola!</h3>
+                <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const btnSignIn = document.getElementById("btn-sign-in");
+        const btnSignUp = document.getElementById("btn-sign-up");
+
+        btnSignIn.addEventListener("click",()=>{
+        container.classList.remove("toggle");
+        });
+        btnSignUp.addEventListener("click",()=>{
+        container.classList.add("toggle");
+        });
+    </script>
+    <script src="/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
